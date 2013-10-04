@@ -1,0 +1,18 @@
+<?php $action = $this->escape($this->element->getAction()); ?>
+<?php $method = $this->escape($this->element->getMethod()); ?>
+
+<form action="<?php echo $action; ?>" method="<?php echo $method; ?>">
+    <fieldset class="login-form">
+        <fieldset class="login-field">
+            <div class="title">Forgot Password</div>
+            
+            <p>Please enter the email address you registered with <br>
+                and we will use it to email you a new password</p>
+
+            <?php echo $this->element->email; ?>
+            <?php echo $this->element->submit; ?>
+
+            <div class="clear"></div>
+        </fieldset><!-- /login-field-->
+    </fieldset><!-- /login-form-->
+</form>

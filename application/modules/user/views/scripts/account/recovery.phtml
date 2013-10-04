@@ -1,0 +1,12 @@
+<div class="form-block">
+    
+    <?php foreach ($this->messages as $message) : ?>
+        <div class="message green">
+            <?php echo $this->escape($message); ?>
+            <div class="close-button"><i></i></div>
+        </div>
+    <?php endforeach; ?>
+    
+    <?php echo $this->form->setAction($this->url()); ?>
+    
+</div>

@@ -1,0 +1,35 @@
+<?php $action = $this->escape($this->element->getAction()); ?>
+<?php $method = $this->escape($this->element->getMethod()); ?>
+<?php $url    = $this->url(array('module'     => 'user', 'controller' => 'account', 'action'     => 'recovery')); ?>
+
+<form action="<?php echo $action; ?>" method="<?php echo $method; ?>">
+    <fieldset class="join-form">
+        <div class="title">
+            Join Now
+
+            <?php foreach ($this->element->getErrorMessages() as $message) : ?>
+                <div class="required"><?php echo $this->escape($message); ?></div>
+            <?php endforeach; ?>
+        </div>
+
+        <div class="notation">Please select your account type</div>
+
+        <fieldset class="field-group">
+            <input id="selected_user_group" name="user_group" type="hidden" value="" />
+            <?php echo $this->element->user_group; ?>
+            <?php echo $this->element->terms_conditions; ?>
+            <?php echo $this->element->submit; ?>
+        </fieldset>
+    </fieldset>
+</form>
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        jQuery("#user_group").ddslick({
+            width: 174,
+            onSelected: function(data) {
+                jQuery('#selected_user_group').val(data.selectedData.value);
+            }
+        });
+    });
+</script>

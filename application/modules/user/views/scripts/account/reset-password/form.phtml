@@ -1,0 +1,22 @@
+<?php $action = $this->escape($this->element->getAction()); ?>
+<?php $method = $this->escape($this->element->getMethod()); ?>
+
+<form action="<?php echo $action; ?>" method="<?php echo $method; ?>">
+    <fieldset class="login-form">
+        <fieldset class="login-field">
+            <div class="title">
+                Enter New Password
+            
+                <?php foreach ($this->element->getErrorMessages() as $message) : ?>
+                    <div class="required"><?php echo $this->escape($message); ?></div>
+                <?php endforeach; ?>
+            </div>
+
+            <?php echo $this->element->password; ?>
+            <?php echo $this->element->confirmation; ?>
+            <?php echo $this->element->submit; ?>
+
+            <div class="clear"></div>
+        </fieldset>
+    </fieldset>
+</form>

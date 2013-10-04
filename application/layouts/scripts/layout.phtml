@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <?php echo $this->headMeta() ?>
+        <?php echo $this->headTitle() ?>
+        <?php echo $this->headLink()?>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <div class="header">
+                <?php echo $this->partial('header.phtml', 'default'); ?>
+            </div>
+
+            <?php echo $this->layout()->content; ?>
+
+            <div class="footer">
+                <?php echo $this->partial('footer.phtml', 'default'); ?>
+            </div>
+        </div>
+    </body>
+</html>

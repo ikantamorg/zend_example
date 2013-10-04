@@ -1,0 +1,33 @@
+<?php $action = $this->escape($this->element->getAction()); ?>
+<?php $method = $this->escape($this->element->getMethod()); ?>
+<?php $url    = $this->url(array('module'     => 'user', 'controller' => 'account', 'action'     => 'recovery')); ?>
+
+<form action="<?php echo $action; ?>" method="<?php echo $method; ?>">
+    <fieldset class="login-form">
+
+        <fieldset class="login-field">
+            <div class="title">
+                Login
+
+                <?php foreach ($this->element->getErrorMessages() as $message) : ?>
+                    <div class="required"><?php echo $this->escape($message); ?></div>
+                <?php endforeach; ?>
+            </div>
+
+            <?php echo $this->element->email; ?>
+            <?php echo $this->element->password; ?>
+
+            <div class="control-group clearfix">
+                <div class="control pull-left"><a class="red" href="<?php echo $url; ?>">Forgot password</a></div>
+                <div class="control pull-right"><?php echo $this->element->submit; ?></div>
+            </div>
+
+            <div class="clear"></div>
+        </fieldset>
+
+        <fieldset class="login-footer">
+            <div class="caption">Don't have any account?</div>
+            <div class="red-btn">Join Now</div>
+        </fieldset>
+    </fieldset>
+</form>

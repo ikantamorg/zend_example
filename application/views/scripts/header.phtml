@@ -1,0 +1,40 @@
+<?php $homeUrl = $this->url(array('module' => 'default', 'controller' => 'index', 'action' => 'index')); ?>
+<?php $loginUrl = $this->url(array('module' => 'user', 'controller' => 'auth', 'action' => 'login')); ?>
+
+
+<div class="main-menu clearfix">
+    <div class="pull-left menu-left">
+        <ul>
+            <li class="search-block">
+                <a class="search-butt" href="#"><i></i> Search</a>
+                <div class="search-block-body">
+                    <div class="search-block-inner">
+
+                    </div>
+                </div><!-- /search-block-->
+            </li>
+            <li class="drop-down-menu">
+                <a href="#" class="drop-down"><i></i>Most popular</a>
+                <div class="drop-down-body">
+                    <ul>
+                        <li><a href="#">Newest</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><input type="submit" value="Become an Member" class="red-btn" style="display:none;"></li>
+        </ul>
+    </div><!-- / menu-left-->	
+    <div class="pull-left logo-block">
+        <a href="<?php echo $homeUrl; ?>">Zend Example</a>
+    </div><!-- /logo-block-->
+    <div class="pull-right menu-right">
+        <ul class="clearfix">
+            <li>
+                <div class="user-data">
+                    <div class="pull-left"><a class="login" href="<?php echo $loginUrl; ?>"><strong>Login</strong></a></div>
+                    <div class="red-btn pull-left">Join Now</div>
+                </div>
+            </li>
+        </ul>
+    </div><!-- / menu-right-->	
+</div><!-- /main-menu-->
